@@ -1,0 +1,16 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.app-header {
+	height: 3rem;
+	width: 100%;
+	background: white;
+
+	@include media-breakpoint-up(md) {
+		height: 6rem;
+	}
+
+	.logo-container {
+		height: 100%;
+		width: 6rem;
+	}
+}

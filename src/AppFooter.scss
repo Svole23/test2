@@ -1,0 +1,76 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.app-footer {
+	width: 100%;
+	padding: 1rem 1rem 0.5rem 1rem;
+	color: gray;
+	background: white;
+
+	@include media-breakpoint-up(md) {
+		padding: 2rem 6rem;
+	}
+
+	a {
+		color: gray;
+		font-size: 9px;
+
+		@include media-breakpoint-up(md) {
+			font-size: 13px;	
+		}
+	}
+
+	.footer-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 24px;
+
+		.footer-item {
+			display: flex;
+			flex-direction: row;
+			width: auto;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+
+		.jenna-logo {
+
+			.jenna-logo__text {
+				margin-right: 0.2rem;
+				opacity: 0.6;
+				border-left: 1px solid gray;
+				padding-left: 0.2rem;
+				font-size: 11px;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				@include media-breakpoint-up(md) {
+					margin-right: 0.5rem;
+					padding-left: 0.5rem;
+					font-size: 16px;
+					height: auto;
+				}
+			}
+		}
+
+		.terms {
+			padding-right: 0.3rem;
+			border-right: 2px solid gray;
+			font-weight: bold;
+
+			@include media-breakpoint-up(md) {
+				padding-right: 0.5rem;
+			}
+		}
+
+		.policy {
+			padding: 0 0.5rem;
+			height: 100%;
+		}
+	}
+}

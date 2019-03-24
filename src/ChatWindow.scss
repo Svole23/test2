@@ -1,0 +1,78 @@
+.chat-window {
+	width: 100%;
+	height: 100%;
+	background: white;
+	height: 100%;
+	padding: 0 1rem;
+	overflow-y: auto;
+
+	.bot-window {
+		width: 100%;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		.text-container {
+			border-radius: 15px;
+			border: 0.5px solid gray;
+			background: white;
+			height: auto;
+			padding: 0.5rem 1rem;
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			margin-left: 0.5rem;
+		}
+
+		.icon-container {
+			height: 2rem;
+			padding: 0;
+			width: 2rem;
+			border-radius: 50%;
+			background: black;
+
+			.icon {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.user-window {
+		width: 100%;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		.text-container {
+			border-radius: 15px;
+			border: 0;
+			background: white;
+			height: auto;
+			padding: 0.5rem 1rem;
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			margin-right: 0.5rem;
+			background: #f5f5ef;
+		}
+
+		.icon-container {
+			height: 2.5rem;
+			width: 2.5rem;
+			padding: 0.4rem;
+			border-radius: 50%;
+			background: #f5f5ef;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.icon {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
