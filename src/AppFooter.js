@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './AppFooter.scss';
-import { ReactComponent as JennaLogo } from './jenna_logo_small.svg';
+import { ReactComponent as JennaLogo } from './svg/jenna_logo_small.svg';
 
 class AppFooter extends Component {
 	render () {

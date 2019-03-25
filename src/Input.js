@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './Input.scss';
-import { ReactComponent as PlaneImage } from './plane.svg';
-import { ReactComponent as MenuImage } from './menu.svg';
+import { ReactComponent as PlaneImage } from './svg/plane.svg';
+import { ReactComponent as MenuImage } from './svg/menu.svg';
 
 class Input extends Component {
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './Profile.scss';
-import { ReactComponent as EditImage } from './edit.svg';
-import { ReactComponent as ProfileImage } from './profile.svg';
+import { ReactComponent as EditImage } from './svg/edit.svg';
+import { ReactComponent as ProfileImage } from './svg/profile.svg';
 
 class Profile extends Component {
 	render () {

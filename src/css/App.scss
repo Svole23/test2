@@ -8,6 +8,11 @@
   position: relative;
 
   @include media-breakpoint-up(md) {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  @include media-breakpoint-up(xl) {
     padding-left: 25vw;
     padding-right: 25vw;
   }

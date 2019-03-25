@@ -1,16 +1,14 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-.app-header {
-	height: 3rem;
+.chat-window {
 	width: 100%;
+	height: 100%;
 	background: white;
+	height: 100%;
+	overflow-y: auto;
+	padding: 1rem 1rem;
 
 	@include media-breakpoint-up(md) {
-		height: 6rem;
-	}
-
-	.logo-container {
-		height: 100%;
-		width: 6rem;
+		padding: 0 1rem;
 	}
 }

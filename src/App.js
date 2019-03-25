@@ -1,57 +1,58 @@
 import React, { Component } from 'react';
-import './App.scss';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import Profile from './Profile';
 import ChatWindow from './ChatWindow';
 import Input from './Input';
-import { SocketProvider } from 'socket.io-react';
-import io from 'socket.io-client';
+import io from "socket.io-client";
 
-
-const socket = io('https://git.heroku.com/react-test-task-back.git', { origins: 'http://127.0.0.1:*'});
-socket.on('connection', msg => {
-  console.log(msg)
-  debugger; 
-});
-
-const bot_messages = [
-  {
-    text: "who'll win?"
-  },
-  {
-    text: "who'll do what?"
-  }
-]
-
-const user_messages = []
+const messages = []
 
 class App extends Component {
  
  constructor() {
     super()
     this.state = {
-       bot_messages: bot_messages,
-       user_messages: user_messages
+       messages
     }
+    this.socket = io('localhost:8080');
+
+    const addMessage = data => {
+      console.log(data);
+      let messages = [...this.state.messages];
+      messages.push({ data });
+      this.setState({ messages });
+      console.log(this.state.messages);
+    };
+
+    this.socket.on('bot_message',function(data){
+      addMessage(data);
+    });
+      
+    this.socket.on('quick_reply', function(data){
+      console.log('got answer from server', data)
+      addMessage(data);
+    });
   }
-  
+
   handleChange() {
     let element = document.querySelector("#textInput")
-    let newValue = {
-      text : element.value
-    }
-    let user_messages = [...this.state.user_messages];
-    user_messages.push({ text: element.value });
-    this.setState({ user_messages });
+    let messages = [...this.state.messages];
+    messages.push(
+      { 
+        data: element.value,
+        isUser: true
+     });
+    this.setState({ messages });
+    this.socket.emit('send_message', { data: element.value });
     element.value = ''
   }
 
   pressed(event){
-        if(event.keyCode === 13){
-           let button = document.querySelector("#submitButton")
-           button.click()
-        }
+    if(event.keyCode === 13){
+      let button = document.querySelector("#submitButton")
+        button.click()
+    }
   }
 
   render() {
@@ -65,8 +66,7 @@ class App extends Component {
       	<div className="chat-container">
           <AppHeader/>
 	        <ChatWindow 
-            bot_messages={this.state.bot_messages} 
-            user_messages={this.state.user_messages}/>
+            messages={this.state.messages}/>
 			    <Input 
             handle={this.handleChange.bind(this)}
             />
